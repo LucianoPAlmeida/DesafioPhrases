@@ -19,6 +19,13 @@
 		B285AF3F1C6EE5D00084884D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285AF3E1C6EE5D00084884D /* InterfaceController.swift */; };
 		B285AF411C6EE5D00084884D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285AF401C6EE5D00084884D /* ExtensionDelegate.swift */; };
 		B285AF431C6EE5D00084884D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B285AF421C6EE5D00084884D /* Assets.xcassets */; };
+		B285AF531C6EE8130084884D /* Catchphrases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285AF521C6EE8130084884D /* Catchphrases.swift */; };
+		B285AF551C6EE85C0084884D /* PhraseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285AF541C6EE85C0084884D /* PhraseRow.swift */; };
+		B285AF591C6EEAA20084884D /* PhrasesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B285AF571C6EEAA20084884D /* PhrasesModel.xcdatamodeld */; };
+		B285AF5C1C6EEAE80084884D /* Phrase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285AF5A1C6EEAE80084884D /* Phrase+CoreDataProperties.swift */; };
+		B285AF5D1C6EEAE80084884D /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285AF5B1C6EEAE80084884D /* Phrase.swift */; };
+		B285AF601C6EEB850084884D /* AppCoreDataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285AF5F1C6EEB850084884D /* AppCoreDataContext.swift */; };
+		B285AF631C6EED920084884D /* PhrasesPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B285AF621C6EED920084884D /* PhrasesPersistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +87,13 @@
 		B285AF401C6EE5D00084884D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		B285AF421C6EE5D00084884D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B285AF441C6EE5D00084884D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B285AF521C6EE8130084884D /* Catchphrases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Catchphrases.swift; sourceTree = "<group>"; };
+		B285AF541C6EE85C0084884D /* PhraseRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhraseRow.swift; sourceTree = "<group>"; };
+		B285AF581C6EEAA20084884D /* PhrasesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhrasesModel.xcdatamodel; sourceTree = "<group>"; };
+		B285AF5A1C6EEAE80084884D /* Phrase+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Phrase+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B285AF5B1C6EEAE80084884D /* Phrase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phrase.swift; sourceTree = "<group>"; };
+		B285AF5F1C6EEB850084884D /* AppCoreDataContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoreDataContext.swift; sourceTree = "<group>"; };
+		B285AF621C6EED920084884D /* PhrasesPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhrasesPersistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +137,8 @@
 		B285AF1A1C6EE5D00084884D /* Desafio Phrases */ = {
 			isa = PBXGroup;
 			children = (
+				B285AF5E1C6EEB620084884D /* Singleton */,
+				B285AF561C6EEA7B0084884D /* Model */,
 				B285AF1B1C6EE5D00084884D /* AppDelegate.swift */,
 				B285AF1D1C6EE5D00084884D /* ViewController.swift */,
 				B285AF1F1C6EE5D00084884D /* Main.storyboard */,
@@ -146,12 +162,41 @@
 		B285AF3D1C6EE5D00084884D /* Desafio Phrases WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B285AF541C6EE85C0084884D /* PhraseRow.swift */,
+				B285AF521C6EE8130084884D /* Catchphrases.swift */,
 				B285AF3E1C6EE5D00084884D /* InterfaceController.swift */,
 				B285AF401C6EE5D00084884D /* ExtensionDelegate.swift */,
 				B285AF421C6EE5D00084884D /* Assets.xcassets */,
 				B285AF441C6EE5D00084884D /* Info.plist */,
 			);
 			path = "Desafio Phrases WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		B285AF561C6EEA7B0084884D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B285AF611C6EED7B0084884D /* Persistence */,
+				B285AF571C6EEAA20084884D /* PhrasesModel.xcdatamodeld */,
+				B285AF5A1C6EEAE80084884D /* Phrase+CoreDataProperties.swift */,
+				B285AF5B1C6EEAE80084884D /* Phrase.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B285AF5E1C6EEB620084884D /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				B285AF5F1C6EEB850084884D /* AppCoreDataContext.swift */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
+		B285AF611C6EED7B0084884D /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				B285AF621C6EED920084884D /* PhrasesPersistence.swift */,
+			);
+			name = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +273,7 @@
 					};
 					B285AF381C6EE5D00084884D = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 43Z9WE284C;
 					};
 				};
 			};
@@ -286,7 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B285AF5C1C6EEAE80084884D /* Phrase+CoreDataProperties.swift in Sources */,
+				B285AF5D1C6EEAE80084884D /* Phrase.swift in Sources */,
 				B285AF1E1C6EE5D00084884D /* ViewController.swift in Sources */,
+				B285AF591C6EEAA20084884D /* PhrasesModel.xcdatamodeld in Sources */,
+				B285AF631C6EED920084884D /* PhrasesPersistence.swift in Sources */,
+				B285AF601C6EEB850084884D /* AppCoreDataContext.swift in Sources */,
 				B285AF1C1C6EE5D00084884D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B285AF531C6EE8130084884D /* Catchphrases.swift in Sources */,
+				B285AF551C6EE85C0084884D /* PhraseRow.swift in Sources */,
 				B285AF411C6EE5D00084884D /* ExtensionDelegate.swift in Sources */,
 				B285AF3F1C6EE5D00084884D /* InterfaceController.swift in Sources */,
 			);
@@ -429,10 +482,13 @@
 		B285AF481C6EE5D00084884D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Desafio Phrases WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bepid.Desafio-Phrases.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -443,10 +499,13 @@
 		B285AF491C6EE5D00084884D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Desafio Phrases WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bepid.Desafio-Phrases.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -527,6 +586,7 @@
 				B285AF491C6EE5D00084884D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B285AF4B1C6EE5D00084884D /* Build configuration list for PBXNativeTarget "Desafio Phrases WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +595,7 @@
 				B285AF4D1C6EE5D00084884D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B285AF4F1C6EE5D00084884D /* Build configuration list for PBXNativeTarget "Desafio Phrases" */ = {
 			isa = XCConfigurationList;
@@ -543,8 +604,22 @@
 				B285AF511C6EE5D00084884D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B285AF571C6EEAA20084884D /* PhrasesModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B285AF581C6EEAA20084884D /* PhrasesModel.xcdatamodel */,
+			);
+			currentVersion = B285AF581C6EEAA20084884D /* PhrasesModel.xcdatamodel */;
+			path = PhrasesModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B285AF101C6EE5D00084884D /* Project object */;
 }

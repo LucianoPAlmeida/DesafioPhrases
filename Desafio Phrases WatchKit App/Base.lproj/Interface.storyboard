@@ -1,15 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Desafio_Phrases_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" height="30" alignment="left" text="Label" id="jIA-95-C4y"/>
+                        <group width="1" alignment="left" id="VGA-wd-8Fm">
+                            <items>
+                                <button width="60" alignment="left" title="Passar" id="RAD-d4-cms">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="passAction" destination="AgC-eL-Hgc" id="OLU-KY-beg"/>
+                                    </connections>
+                                </button>
+                                <button width="60" alignment="right" title="Salvar" id="atm-pO-beY">
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="saveAction" destination="AgC-eL-Hgc" id="pei-zX-MKt"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label width="1" height="25.5" alignment="left" textAlignment="center" id="Ok1-5G-EzN"/>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Mostrar Bordões" id="4ei-Fj-1ea">
+                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="showSavedPhrases" destination="AgC-eL-Hgc" id="rty-XK-usn"/>
+                            </connections>
+                        </button>
+                        <table alignment="left" verticalAlignment="bottom" id="gEg-ki-KuX">
+                            <items>
+                                <tableRow identifier="PhraseRow" id="h7c-yT-O6g" customClass="PhraseRow" customModule="Desafio_Phrases_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="rX5-0k-9LT">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="Label" id="RM2-Ot-gAF"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowDescription" destination="RM2-Ot-gAF" id="1ZL-Yv-GbU"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="messageLabel" destination="Ok1-5G-EzN" id="TCW-8e-LYk"/>
+                        <outlet property="passButton" destination="RAD-d4-cms" id="XuA-1h-VID"/>
+                        <outlet property="phraseLabel" destination="jIA-95-C4y" id="0Lg-oA-G8L"/>
+                        <outlet property="saveButton" destination="atm-pO-beY" id="ISt-it-fJN"/>
+                        <outlet property="showPhrasesButton" destination="4ei-Fj-1ea" id="0gB-dR-58l"/>
+                        <outlet property="table" destination="gEg-ki-KuX" id="HE1-bq-A3Q"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="280" y="314"/>
         </scene>
     </scenes>
 </document>

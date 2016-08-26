@@ -7,14 +7,19 @@
 //
 
 import UIKit
-
+import WatchConnectivity
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        if (WCSession.isSupported()) {
+            let session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
         // Override point for customization after application launch.
         return true
     }
@@ -41,6 +46,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        let persistence = PhrasesPersistence()
+        if let messageType = message["type"] as? String {
+            switch messageType {
+            case "save_phrase":
+                if let phrase = message["phrase"] as? String {
+                    if !persistence.contains(phrase){
+                        persistence.addPhrase(phrase)
+                        dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+                            NSNotificationCenter.defaultCenter().postNotificationName(DidReceivePhrase, object: phrase)
+                        })
+                    }
+                    replyHandler([:])
+                }
+                break
+            case "request_phrases":
+                replyHandler([ "phrases" : persistence.allPhrases])
+                break
+            default :
+                break
+            }
+        }
 
+    }
+    
 }
 
